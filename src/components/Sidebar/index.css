@@ -1,6 +1,7 @@
 .sidebar {
     width: 5vw;
     height: 100vh;
+    overflow: scroll;
     padding-top: 10px; 
 
     background-color: #eeeeee;

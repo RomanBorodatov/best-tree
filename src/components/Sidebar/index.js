@@ -21,30 +21,40 @@ class Sidebar extends Component {
     render() {
         return (
             <div className={`sidebar ${this.state.expanded ? 'sidebar-expanded' : ''}`} >
-                <div className={`sidebar-expand-button ${this.state.expanded ? '' : 'sidebar-expanded-expand-button'}`} onClick={this.handleExpand}>
-                    =>
-                </div>
-                <div className="sidebar-content" style={{opacity: `${this.state.expanded ? '1' : '0'}`}}>
-                    <img src={avatar} alt='avatar' />
-                    <h2>Person Name</h2>
-                    <p>Family name</p>
-                    <p>Experience</p>
-                    <ul>
-                        <li>Position</li>
-                        <li>Position</li>
-                        <li>Position</li>
-                        <li>Position</li>
-                        <li>Position</li>
-                    </ul>
-                    <hr/>
-                    <p>Events</p>
-                    <ul>
-                        <li>Event</li>
-                        <li>Event</li>
-                        <li>Event</li>
-                        <li>Event</li>
-                        <li>Event</li>
-                    </ul>
+                <div>
+                    <div className={`sidebar-expand-button ${this.state.expanded ? '' : 'sidebar-expanded-expand-button'}`} onClick={this.handleExpand}>
+                        =>
+                    </div>
+                    <div className="sidebar-content" style={{opacity: `${this.state.expanded ? '1' : '0'}`}}>
+                        <img src={avatar} alt='avatar' />
+                        <h2>Person Name</h2>
+                        <p>Family name</p>
+                        <p>Experience</p>
+                        <ul>
+                            <li>Position</li>
+                            <li>Position</li>
+                            <li>Position</li>
+                            <li>Position</li>
+                            <li>Position</li>
+                        </ul>
+                        <hr/>
+                        <p>Events</p>
+                        <ul>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                            <li>Event</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

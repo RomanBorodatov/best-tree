@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 
-import MyTree from '../Tree'
+import MyTree from '../MyTree'
 
 class Main extends Component {
     render() {
