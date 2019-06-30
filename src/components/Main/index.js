@@ -7,7 +7,7 @@ class Main extends Component {
     render() {
         return (
             <div className="main">
-                <MyTree/>
+                <MyTree handleNodeSelect={this.props.handleNodeSelect}/>
             </div>
         )
     }

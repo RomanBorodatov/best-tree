@@ -19,6 +19,7 @@ class Sidebar extends Component {
     }
 
     render() {
+        const { person } = this.props;
         return (
             <div className={`sidebar ${this.state.expanded ? 'sidebar-expanded' : ''}`} >
                 <div>
@@ -27,33 +28,21 @@ class Sidebar extends Component {
                     </div>
                     <div className="sidebar-content" style={{opacity: `${this.state.expanded ? '1' : '0'}`}}>
                         <img src={avatar} alt='avatar' />
-                        <h2>Person Name</h2>
-                        <p>Family name</p>
+                        <h2>{person.name}</h2>
+                        {/* <span>{person.attributes.status}</span>
+                        <span>{`${person.attributes.joinSeason} ${person.attributes.joinYear}`}</span>
+                        <ul className='contacts'>
+                            //contacts
+                        </ul>
                         <p>Experience</p>
                         <ul>
-                            <li>Position</li>
-                            <li>Position</li>
-                            <li>Position</li>
-                            <li>Position</li>
-                            <li>Position</li>
+                            //positions
                         </ul>
                         <hr/>
                         <p>Events</p>
                         <ul>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                            <li>Event</li>
-                        </ul>
+                            //events
+                        </ul> */}
                     </div>
                 </div>
             </div>

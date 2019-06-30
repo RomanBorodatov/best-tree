@@ -70,7 +70,42 @@ const myTreeData = [
                                 email: 'estefanovich1@gmail.com'
                             }
                         },
-                        children: [],
+                        children: [
+                            {
+                                name: 'Міша Швець',
+                                attributes: {
+                                    imageLink: '',
+                                    status: 'Full',
+                                    joinSeason: 'Осінь',
+                                    joinYear: '2017',
+                                    positions: ['Quest resp Halloween 17', 'Topic Resp EBEC', 'MO MW Spring 18', 'Party (Co)Resp Course', 'Treasurer in XI Board aka inBOARDel'],
+                                    events: ['RM Lodz Delegate'],
+                                    contacts: {
+                                        fb: 'https://www.facebook.com/profile.php?id=100006100150146',
+                                        insta: '',
+                                        email: '19mch97@gmail.com'
+                                    }
+                                },
+                                children: [],
+                            },
+                            {
+                                name: 'Катя Стефанович',
+                                attributes: {
+                                    imageLink: '',
+                                    status: 'Full',
+                                    joinSeason: 'Осінь',
+                                    joinYear: '2017',
+                                    positions: ['PR resp КАК', 'Designer EBEC', 'Day Resp Course', 'MO Hackathon', 'Pax Resp Course'],
+                                    events: ['Brno Summer course – Pax', 'RM Delegate Vienna', 'SLUSH volunteer Helsinki'],
+                                    contacts: {
+                                        fb: 'https://www.facebook.com/profile.php?id=100011212662293',
+                                        insta: '',
+                                        email: 'estefanovich1@gmail.com'
+                                    }
+                                },
+                                children: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -79,17 +114,32 @@ const myTreeData = [
 ];
 
 class MyTree extends Component {
+    state = {}
+
+    componentDidMount() {
+        const dimensions = this.treeContainer.getBoundingClientRect();
+        this.setState({
+            translate: {
+                x: dimensions.width / 2,
+                y: dimensions.height / 4
+            }
+        });
+    }
     render() {
         return (
-            <div className="tree">
+            <div className="tree" ref={tc => (this.treeContainer = tc)}>
                 <Tree 
                     data={myTreeData}
+                    translate={this.state.translate} 
                     orientation="vertical"
                     collapsible={false}
+                    zoomable={true}
+                    scaleExtent={{min: 0.5, max: 1}}
+                    zoom={1}
                     allowForeignObjects
                     nodeSvgShape={{shape: 'none'}}
                     nodeLabelComponent={{
-                        render: <TreeNode/>,
+                        render: <TreeNode handleNodeSelect={this.props.handleNodeSelect}/>,
                         foreignObjectWrapper: {
                         y: -40,
                         x: -40
